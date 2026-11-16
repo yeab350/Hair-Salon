@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <!-- Gold Scissor / Emblem -->
+  <g transform="translate(15, 10)">
+    <!-- Stylized geometric shears & diamond -->
+    <circle cx="20" cy="20" r="10" stroke="#C9A84C" stroke-width="2.5" fill="none"/>
+    <circle cx="20" cy="40" r="10" stroke="#C9A84C" stroke-width="2.5" fill="none"/>
+    <path d="M28 25 L52 48" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M28 35 L52 12" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="37" cy="30" r="2.5" fill="#3D1A3E"/>
+    <path d="M52 12 L58 6 M52 48 L58 54" stroke="#B76E79" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography: LUX SALON -->
+  <text x="95" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" font-weight="600" fill="#2C2C2C" letter-spacing="4">LUX</text>
+  <text x="180" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" font-weight="300" fill="#C9A84C" letter-spacing="4">SALON</text>
+  
+  <!-- Subtitle -->
+  <text x="96" y="60" font-family="'Inter', sans-serif" font-size="9" font-weight="500" fill="#8B8481" letter-spacing="6">ADDIS ABABA · EST. 2016</text>
+  <line x1="96" y1="64" x2="280" y2="64" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.4"/>
+</svg>

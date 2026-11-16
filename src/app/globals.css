@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 247 242;       /* #FAF7F2 warm cream */
+    --foreground: 44 44 44;          /* #2C2C2C charcoal text */
+    --card: 255 255 255;             /* #FFFFFF pure white card */
+    --card-foreground: 44 44 44;     /* #2C2C2C */
+    --border: 232 226 216;           /* #E8E2D8 soft border */
+    --input: 232 226 216;            /* #E8E2D8 */
+    --muted: 139 132 129;            /* #8B8481 secondary text */
+    --muted-bg: 244 239 230;         /* #F4EFE6 light surface */
+    --gold: 201 168 76;              /* #C9A84C gold */
+    --plum: 61 26 62;                /* #3D1A3E plum */
+    --rose-gold: 183 110 121;        /* #B76E79 */
+    --header-bg: rgba(250, 247, 242, 0.90);
+    --header-border: 232 226 216;
+    --cream: 250 247 242;            /* #FAF7F2 */
+    --cream-dark: 237 229 216;       /* #EDE5D8 */
+    --charcoal: 44 44 44;            /* #2C2C2C */
+    --charcoal-light: 82 78 76;      /* #524E4C */
+  }
+
+  .dark {
+    --background: 18 15 20;          /* #120F14 deep luxury charcoal */
+    --foreground: 245 239 235;       /* #F5EFEB crisp warm text */
+    --card: 28 23 30;                /* #1C171E elevated dark card */
+    --card-foreground: 245 239 235;  /* #F5EFEB */
+    --border: 52 44 56;              /* #342C38 dark border */
+    --input: 52 44 56;               /* #342C38 */
+    --muted: 172 163 166;            /* #ACA3A6 readable muted text */
+    --muted-bg: 38 31 41;            /* #261F29 dark row/chip background */
+    --gold: 216 182 92;              /* #D8B65C bright luxury gold */
+    --plum: 82 38 84;                /* #522654 */
+    --rose-gold: 204 128 140;        /* #CC808C */
+    --header-bg: rgba(18, 15, 20, 0.92);
+    --header-border: 52 44 56;
+    --cream: 18 15 20;               /* in dark mode, cream becomes dark background */
+    --cream-dark: 38 31 41;          /* in dark mode, cream-dark becomes elevated dark background */
+    --charcoal: 245 239 235;         /* in dark mode, charcoal text becomes high-contrast white */
+    --charcoal-light: 206 198 200;   /* in dark mode, charcoal-light becomes light secondary text */
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  :lang(am) {
+    font-family: 'Noto Sans Ethiopic', sans-serif;
+  }
+
+  .ethiopic {
+    font-family: 'Noto Sans Ethiopic', sans-serif;
+  }
+}
+
+@layer components {
+  .container-salon {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-white hover:brightness-110 active:brightness-95 transition-all duration-200 font-semibold;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-gold text-gold hover:bg-gold hover:text-white transition-all duration-200 font-semibold;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif text-charcoal;
+  }
+
+  .card-salon {
+    @apply bg-card text-card-foreground rounded-2xl shadow-sm border border-border overflow-hidden transition-colors;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #C9A84C 0%, #D4B96A 50%, #A8853A 100%);
+  }
+
+  .gradient-plum {
+    background: linear-gradient(135deg, #3D1A3E 0%, #5A2B5B 100%);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(90deg, rgb(var(--cream-dark)) 25%, rgb(var(--cream)) 50%, rgb(var(--cream-dark)) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
