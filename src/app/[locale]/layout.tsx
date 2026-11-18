@@ -112,7 +112,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-gold/20 selection:text-gold-dark transition-colors duration-200">
+      <body className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-accent/20 selection:text-accent transition-colors duration-200">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

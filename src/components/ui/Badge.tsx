@@ -2,17 +2,19 @@ import { cn } from '@/lib/utils'
 import { type HTMLAttributes } from 'react'
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: 'gold' | 'plum' | 'rose-gold' | 'muted' | 'success' | 'warning' | 'error'
+  variant?: 'accent' | 'copper' | 'gold' | 'plum' | 'rose-gold' | 'muted' | 'success' | 'warning' | 'error'
 }
 
-export function Badge({ className, variant = 'gold', children, ...props }: BadgeProps) {
+export function Badge({ className, variant = 'accent', children, ...props }: BadgeProps) {
   const variantClasses = {
-    gold: 'bg-gold/10 text-gold border-gold/20',
-    plum: 'bg-plum/10 text-plum dark:text-gold border-plum/20',
-    'rose-gold': 'bg-rose-gold/10 text-rose-gold border-rose-gold/20',
-    muted: 'bg-muted/10 text-muted border-muted/20',
-    success: 'bg-green-50 text-green-700 border-green-200 dark:bg-green-950/40 dark:text-green-300 dark:border-green-800/40',
-    warning: 'bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-950/40 dark:text-yellow-300 dark:border-yellow-800/40',
+    accent: 'bg-accent/15 text-accent border-accent/30',
+    copper: 'bg-accent/15 text-accent border-accent/30',
+    gold: 'bg-accent/15 text-accent border-accent/30',
+    plum: 'bg-accent/15 text-accent border-accent/30',
+    'rose-gold': 'bg-accent/15 text-accent border-accent/30',
+    muted: 'bg-muted/15 text-muted border-border',
+    success: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40',
+    warning: 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/40',
     error: 'bg-red-50 text-red-700 border-red-200 dark:bg-red-950/40 dark:text-red-300 dark:border-red-800/40',
   }
 

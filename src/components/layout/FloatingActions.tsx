@@ -23,7 +23,7 @@ export default function FloatingActions() {
       {/* Phone */}
       <a
         href={`tel:${salonConfig.contact.phone}`}
-        className="flex items-center justify-center h-12 w-12 bg-gold hover:bg-gold-dark text-white rounded-full shadow-lg transition-all hover:scale-110"
+        className="flex items-center justify-center h-12 w-12 bg-accent hover:bg-accent-hover text-[rgb(var(--accent-foreground))] rounded-full shadow-lg transition-all hover:scale-110"
         aria-label="Call us"
       >
         <Phone className="h-6 w-6" />
@@ -32,7 +32,7 @@ export default function FloatingActions() {
       {/* Book */}
       <IntlLink
         href="/booking"
-        className="flex items-center justify-center h-12 w-12 bg-plum hover:bg-plum-light text-white rounded-full shadow-lg transition-all hover:scale-110"
+        className="flex items-center justify-center h-12 w-12 bg-foreground hover:bg-foreground/90 text-background rounded-full shadow-lg transition-all hover:scale-110 border border-border"
         aria-label="Book appointment"
       >
         <Calendar className="h-6 w-6" />

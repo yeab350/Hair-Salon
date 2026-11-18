@@ -60,7 +60,7 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
 
       {/* Image container */}
       <div
-        className="max-w-4xl w-full max-h-[85vh] rounded-2xl overflow-hidden bg-charcoal/90 flex flex-col items-center justify-center relative shadow-2xl"
+        className="max-w-4xl w-full max-h-[85vh] rounded-2xl overflow-hidden bg-[#13262C] flex flex-col items-center justify-center relative shadow-2xl border border-white/10"
         onClick={(e) => e.stopPropagation()}
       >
         <img
@@ -68,9 +68,9 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
           alt={locale === 'am' ? item.altAm : item.alt}
           className="max-h-[75vh] w-auto max-w-full object-contain rounded-t-xl"
         />
-        <div className="w-full bg-charcoal/95 p-4 text-center text-white border-t border-white/10 flex items-center justify-between">
+        <div className="w-full bg-[#0C1A1F] p-4 text-center text-white border-t border-white/10 flex items-center justify-between">
           <p className="font-serif text-lg">{locale === 'am' ? item.altAm : item.alt}</p>
-          <span className="text-xs text-gold font-medium bg-gold/10 px-2.5 py-1 rounded-full border border-gold/30">
+          <span className="text-xs text-accent font-medium bg-accent/15 px-2.5 py-1 rounded-full border border-accent/30">
             {currentIndex + 1} / {items.length}
           </span>
         </div>

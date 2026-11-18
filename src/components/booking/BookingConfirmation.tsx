@@ -118,7 +118,7 @@ export default function BookingConfirmation({ bookingState }: Props) {
         <div className="h-16 w-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <AlertCircle className="h-8 w-8" />
         </div>
-        <h2 className="text-2xl font-serif text-charcoal mb-2">
+        <h2 className="text-2xl font-serif text-foreground mb-2">
           {locale === 'am' ? 'ቀጠሮው ተሰርዟል' : 'Appointment Cancelled'}
         </h2>
         <p className="text-muted text-sm mb-6">
@@ -126,7 +126,7 @@ export default function BookingConfirmation({ bookingState }: Props) {
             ? `የቀጠሮ መለያዎ ${bookingRef} ተሰርዟል። አስፈላጊ ከሆነ በማንኛውም ጊዜ አዲስ ቀጠሮ መያዝ ይችላሉ።`
             : `Your booking reference ${bookingRef} has been cancelled. You can book a new appointment anytime.`}
         </p>
-        <IntlLink href="/booking" className="inline-flex px-6 py-3 btn-gold rounded-full text-sm">
+        <IntlLink href="/booking" className="inline-flex px-6 py-3 btn-accent rounded-full text-sm font-semibold">
           {locale === 'am' ? 'አዲስ ቀጠሮ ያዙ' : 'Book Another Appointment'}
         </IntlLink>
       </div>
@@ -137,65 +137,65 @@ export default function BookingConfirmation({ bookingState }: Props) {
     <div className="max-w-2xl mx-auto py-8">
       {/* Top Banner */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-emerald-50 text-emerald-600 mb-4 shadow-sm animate-fade-in">
+        <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400 mb-4 shadow-sm animate-fade-in">
           <CheckCircle className="h-10 w-10" />
         </div>
-        <h1 className="text-3xl md:text-4xl font-serif text-charcoal mb-2">{t('title')}</h1>
+        <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-2">{t('title')}</h1>
         <p className="text-muted text-base max-w-md mx-auto">{t('subtitle')}</p>
 
         {/* Reference Badge */}
         {bookingRef && (
-          <div className="mt-5 inline-flex items-center gap-3 px-6 py-2.5 bg-gold/10 border border-gold/30 rounded-2xl shadow-sm">
+          <div className="mt-5 inline-flex items-center gap-3 px-6 py-2.5 bg-accent/10 border border-accent/30 rounded-2xl shadow-sm">
             <span className="text-xs uppercase tracking-wider text-muted font-medium">{t('ref_label')}:</span>
-            <span className="font-mono font-bold text-gold text-xl tracking-wider">{bookingRef}</span>
+            <span className="font-mono font-bold text-accent text-xl tracking-wider">{bookingRef}</span>
           </div>
         )}
       </div>
 
       {/* Booking Details Card */}
-      <div className="card-salon p-6 md:p-8 mb-6 shadow-sm border border-cream-dark">
-        <div className="border-b border-cream-dark/80 pb-5 mb-5 flex items-center justify-between">
-          <h2 className="font-serif text-xl text-charcoal flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-gold" />
+      <div className="card-salon p-6 md:p-8 mb-6 shadow-sm border border-border">
+        <div className="border-b border-border pb-5 mb-5 flex items-center justify-between">
+          <h2 className="font-serif text-xl text-foreground flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-accent" />
             {locale === 'am' ? 'የቀጠሮ ዝርዝር' : 'Appointment Summary'}
           </h2>
-          <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">
+          <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
             {locale === 'am' ? 'ተረጋግጧል' : 'Confirmed'}
           </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-6">
-          <div className="flex items-start gap-3 p-3 rounded-xl bg-cream/40">
-            <Calendar className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-alternate border border-border">
+            <Calendar className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-xs text-muted font-medium">{locale === 'am' ? 'ቀን' : 'Date'}</p>
-              <p className="font-bold text-charcoal">{dateFormatted}</p>
+              <p className="font-bold text-foreground">{dateFormatted}</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-3 rounded-xl bg-muted-bg/50">
-            <Clock className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-alternate border border-border">
+            <Clock className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-xs text-muted font-medium">{locale === 'am' ? 'ሰዓት እና ቆይታ' : 'Time & Duration'}</p>
-              <p className="font-bold text-charcoal">
+              <p className="font-bold text-foreground">
                 {selectedTime} ({formatDuration(totalDuration)})
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-3 rounded-xl bg-muted-bg/50">
-            <User className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-alternate border border-border">
+            <User className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-xs text-muted font-medium">{locale === 'am' ? 'አስጌጥ' : 'Stylist'}</p>
-              <p className="font-bold text-charcoal">{stylistName}</p>
+              <p className="font-bold text-foreground">{stylistName}</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-3 rounded-xl bg-muted-bg/50">
-            <MapPin className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-alternate border border-border">
+            <MapPin className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-xs text-muted font-medium">{locale === 'am' ? 'ቦታ' : 'Location'}</p>
-              <p className="font-bold text-charcoal">Lux Salon · Bole Road</p>
+              <p className="font-bold text-foreground">Lux Salon · Bole Road</p>
             </div>
           </div>
         </div>
@@ -208,23 +208,23 @@ export default function BookingConfirmation({ bookingState }: Props) {
           <div className="space-y-2">
             {selectedServices.map((service) => (
               <div key={service.id} className="flex justify-between items-center text-sm py-1">
-                <span className="text-charcoal font-medium">
+                <span className="text-foreground font-medium">
                   {locale === 'am' ? service.name.am : service.name.en}
                 </span>
-                <span className="font-semibold text-gold">{formatPriceSimple(service.price)}</span>
+                <span className="font-semibold text-accent">{formatPriceSimple(service.price)}</span>
               </div>
             ))}
           </div>
           <div className="border-t border-border mt-3 pt-3 flex justify-between items-center text-base">
-            <span className="font-bold text-charcoal">{locale === 'am' ? 'አጠቃላይ ዋጋ' : 'Total Price'}</span>
-            <span className="font-bold text-gold text-xl">{formatPriceSimple(totalPrice)}</span>
+            <span className="font-bold text-foreground">{locale === 'am' ? 'አጠቃላይ ዋጋ' : 'Total Price'}</span>
+            <span className="font-bold text-accent text-xl">{formatPriceSimple(totalPrice)}</span>
           </div>
         </div>
 
         {/* Customer Notes */}
         {notes && (
-          <div className="bg-muted-bg/60 rounded-xl p-3 text-xs text-muted mt-3">
-            <span className="font-semibold text-charcoal">{locale === 'am' ? 'ማስታወሻ' : 'Notes'}: </span>
+          <div className="bg-alternate rounded-xl p-3 text-xs text-muted mt-3 border border-border">
+            <span className="font-semibold text-foreground">{locale === 'am' ? 'ማስታወሻ' : 'Notes'}: </span>
             {notes}
           </div>
         )}
@@ -232,20 +232,19 @@ export default function BookingConfirmation({ bookingState }: Props) {
 
       {/* Simulated Automated Reminder Pill */}
       {notificationSent && (
-        <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-2xl p-4 mb-6 flex items-start gap-3">
-          <div className="p-2 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 flex-shrink-0">
+        <div className="bg-accent/10 border border-accent/30 rounded-2xl p-4 mb-6 flex items-start gap-3">
+          <div className="p-2 rounded-full bg-accent/20 text-accent flex-shrink-0">
             <MessageCircle className="h-4 w-4" />
           </div>
-          <div className="text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
+          <div className="text-xs text-foreground leading-relaxed">
             <p className="font-bold mb-0.5">
               {locale === 'am' ? 'ራስ-ሰር የቀጠሮ ማስታወሻ ተልኳል' : 'Simulated 24h SMS/WhatsApp Reminder Queued'}
             </p>
-            <p className="text-amber-800/90 dark:text-amber-300/90">
+            <p className="text-muted">
               {locale === 'am'
                 ? `ወደ ${clientPhone} ማረጋገጫ ተልኳል። እንዲሁም ከቀጠሮዎ 24 ሰዓት በፊት ማስታወሻ ይደርስዎታል።`
                 : `A confirmation text was simulated for ${clientPhone}. An automatic reminder will trigger 24h before your appointment.`}
             </p>
-            {/* TODO: In production, integrate Twilio, Termii, or WhatsApp Business Cloud API webhook here */}
           </div>
         </div>
       )}
@@ -256,17 +255,17 @@ export default function BookingConfirmation({ bookingState }: Props) {
           href={getGoogleCalendarUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-card border border-border hover:border-gold text-charcoal hover:text-gold rounded-full font-medium text-sm transition-all shadow-sm"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-card border border-border hover:border-accent text-foreground hover:text-accent rounded-full font-medium text-sm transition-all shadow-sm"
         >
-          <Calendar className="h-4 w-4 text-gold" />
+          <Calendar className="h-4 w-4 text-accent" />
           Google Calendar
         </a>
 
         <button
           onClick={handleDownloadICS}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-card border border-border hover:border-gold text-charcoal hover:text-gold rounded-full font-medium text-sm transition-all shadow-sm"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-card border border-border hover:border-accent text-foreground hover:text-accent rounded-full font-medium text-sm transition-all shadow-sm"
         >
-          <Download className="h-4 w-4 text-gold" />
+          <Download className="h-4 w-4 text-accent" />
           Apple / Outlook (.ics)
         </button>
 
@@ -274,7 +273,7 @@ export default function BookingConfirmation({ bookingState }: Props) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="sm:col-span-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white rounded-full font-medium text-sm transition-all shadow-sm"
+          className="sm:col-span-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-medium text-sm transition-all shadow-sm"
         >
           <MessageCircle className="h-4 w-4" />
           {t('whatsapp')}
@@ -285,32 +284,32 @@ export default function BookingConfirmation({ bookingState }: Props) {
       <div className="card-salon p-5 mb-8 border border-border bg-card">
         <button
           onClick={() => setShowPaymentInfo(!showPaymentInfo)}
-          className="w-full flex items-center justify-between text-left text-sm font-medium text-charcoal"
+          className="w-full flex items-center justify-between text-left text-sm font-medium text-foreground"
         >
           <span className="flex items-center gap-2">
-            <CreditCard className="h-4 w-4 text-gold" />
+            <CreditCard className="h-4 w-4 text-accent" />
             {locale === 'am' ? 'የክፍያ አማራጮች (ቴሌብር / ንግድ ባንክ / ቻፓ)' : 'Ethiopian Payment Options (Telebirr / CBE / Chapa)'}
           </span>
-          <span className="text-xs text-gold font-semibold underline">
+          <span className="text-xs text-accent font-semibold underline">
             {showPaymentInfo ? (locale === 'am' ? 'ዝጋ' : 'Hide') : (locale === 'am' ? 'ዝርዝር ይመልከቱ' : 'View Details')}
           </span>
         </button>
 
         {showPaymentInfo && (
-          <div className="mt-4 pt-4 border-t border-border text-xs text-charcoal-light space-y-2">
-            <p className="font-semibold text-charcoal">
+          <div className="mt-4 pt-4 border-t border-border text-xs text-muted space-y-2">
+            <p className="font-semibold text-foreground">
               {locale === 'am' ? 'በሳሎኑ ውስጥ ወይም አስቀድመው መክፈል ይችላሉ፡' : 'Pay at the salon or prepay via mobile banking:'}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
-              <div className="p-2.5 rounded-lg bg-muted-bg/50 border border-border">
+              <div className="p-2.5 rounded-lg bg-alternate border border-border">
                 <span className="font-bold text-[#0066B2] dark:text-[#38a0f8] block">Telebirr</span>
                 <span className="text-muted">0911 234 567</span>
               </div>
-              <div className="p-2.5 rounded-lg bg-muted-bg/50 border border-border">
+              <div className="p-2.5 rounded-lg bg-alternate border border-border">
                 <span className="font-bold text-[#800080] dark:text-[#c45cc4] block">CBE Birr</span>
                 <span className="text-muted">1000 2345 67890</span>
               </div>
-              <div className="p-2.5 rounded-lg bg-muted-bg/50 border border-border">
+              <div className="p-2.5 rounded-lg bg-alternate border border-border">
                 <span className="font-bold text-[#00AA55] dark:text-[#32d980] block">Chapa / Card</span>
                 <span className="text-muted">Online Gateway (Ready)</span>
               </div>
@@ -333,17 +332,17 @@ export default function BookingConfirmation({ bookingState }: Props) {
           </button>
           <IntlLink
             href="/booking"
-            className="text-muted hover:text-gold transition-colors text-xs underline underline-offset-4"
+            className="text-muted hover:text-accent transition-colors text-xs underline underline-offset-4"
           >
             {locale === 'am' ? 'ቀጠሮ ቀይር / እንደገና ያዙ' : 'Reschedule'}
           </IntlLink>
         </div>
 
         <div className="flex gap-3">
-          <IntlLink href="/booking" className="px-5 py-2.5 btn-outline-gold rounded-full text-xs font-semibold">
+          <IntlLink href="/booking" className="px-5 py-2.5 btn-outline-accent rounded-full text-xs font-semibold">
             {t('new_booking')}
           </IntlLink>
-          <IntlLink href="/" className="px-5 py-2.5 bg-muted-bg text-charcoal hover:bg-muted-bg/80 rounded-full text-xs font-semibold">
+          <IntlLink href="/" className="px-5 py-2.5 bg-alternate text-foreground hover:bg-alternate/80 rounded-full text-xs font-semibold border border-border">
             {t('back_home')}
           </IntlLink>
         </div>
@@ -354,7 +353,7 @@ export default function BookingConfirmation({ bookingState }: Props) {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
           <div className="card-salon p-6 max-w-sm w-full text-center">
             <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-3" />
-            <h3 className="font-serif text-lg text-charcoal mb-2">
+            <h3 className="font-serif text-lg text-foreground mb-2">
               {locale === 'am' ? 'ቀጠሮዎን መሰረዝ ይፈልጋሉ?' : 'Cancel this appointment?'}
             </h3>
             <p className="text-muted text-xs mb-6">
@@ -365,7 +364,7 @@ export default function BookingConfirmation({ bookingState }: Props) {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowCancelModal(false)}
-                className="flex-1 px-4 py-2 bg-muted-bg text-charcoal rounded-full text-xs font-semibold"
+                className="flex-1 px-4 py-2 bg-alternate text-foreground border border-border rounded-full text-xs font-semibold"
               >
                 {locale === 'am' ? 'ተመለስ' : 'Keep Appointment'}
               </button>

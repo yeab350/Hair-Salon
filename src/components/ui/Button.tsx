@@ -3,16 +3,18 @@ import { type VariantProps, cva } from 'class-variance-authority'
 import { type ButtonHTMLAttributes, forwardRef } from 'react'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold disabled:opacity-50 disabled:pointer-events-none',
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:opacity-50 disabled:pointer-events-none',
   {
     variants: {
       variant: {
-        default: 'bg-gold text-white hover:bg-gold-dark shadow-sm',
-        outline: 'border border-gold text-gold hover:bg-gold hover:text-white',
-        ghost: 'text-charcoal hover:bg-cream-dark',
-        plum: 'bg-plum text-white hover:bg-plum-light',
-        'rose-gold': 'bg-rose-gold text-white hover:bg-rose-gold-light',
-        link: 'text-gold underline-offset-4 hover:underline',
+        default: 'bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover shadow-sm',
+        accent: 'bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover shadow-sm',
+        copper: 'bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover shadow-sm',
+        outline: 'border border-accent text-accent hover:bg-accent hover:text-[rgb(var(--accent-foreground))]',
+        ghost: 'text-foreground hover:bg-alternate',
+        plum: 'bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover',
+        'rose-gold': 'bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover',
+        link: 'text-accent underline-offset-4 hover:underline',
       },
       size: {
         sm: 'h-8 px-4 text-sm',

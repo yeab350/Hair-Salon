@@ -8,7 +8,9 @@ export default function HomeTestimonials() {
   const featured = testimonials.slice(0, 4)
 
   return (
-    <section className="py-24 bg-card/30 border-y border-border/50 transition-colors">
+    <section className="py-24 bg-alternate border-y border-border transition-colors relative">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       <div className="container-salon">
         <div className="text-center mb-14">
           <h2 className="section-heading mb-4">{t('title')}</h2>
@@ -22,21 +24,21 @@ export default function HomeTestimonials() {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-4 w-4 ${i < testimonial.rating ? 'text-gold fill-gold' : 'text-border'}`}
+                    className={`h-4 w-4 ${i < testimonial.rating ? 'text-amber-500 fill-amber-500' : 'text-border'}`}
                   />
                 ))}
               </div>
-              <blockquote className="text-charcoal-light leading-relaxed mb-4 italic">
+              <blockquote className="text-foreground/90 leading-relaxed mb-4 italic">
                 &ldquo;{locale === 'am' ? testimonial.textAm : testimonial.text}&rdquo;
               </blockquote>
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-gold to-plum flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">
+                <div className="h-10 w-10 rounded-full bg-foreground/5 border border-border flex items-center justify-center">
+                  <span className="text-foreground font-serif text-sm font-bold">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="font-medium text-charcoal text-sm">
+                  <p className="font-medium text-foreground text-sm">
                     {locale === 'am' && testimonial.nameAm ? testimonial.nameAm : testimonial.name}
                   </p>
                   <p className="text-muted text-xs">{testimonial.date}</p>
@@ -46,6 +48,8 @@ export default function HomeTestimonials() {
           ))}
         </div>
       </div>
+
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   )
 }

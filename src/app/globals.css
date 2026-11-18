@@ -4,43 +4,47 @@
 
 @layer base {
   :root {
-    --background: 250 247 242;       /* #FAF7F2 warm cream */
-    --foreground: 44 44 44;          /* #2C2C2C charcoal text */
+    --background: 251 250 247;       /* #FBFAF7 neutral ivory page background */
+    --foreground: 18 38 43;          /* #12262B deep slate-teal text */
     --card: 255 255 255;             /* #FFFFFF pure white card */
-    --card-foreground: 44 44 44;     /* #2C2C2C */
-    --border: 232 226 216;           /* #E8E2D8 soft border */
-    --input: 232 226 216;            /* #E8E2D8 */
-    --muted: 139 132 129;            /* #8B8481 secondary text */
-    --muted-bg: 244 239 230;         /* #F4EFE6 light surface */
-    --gold: 201 168 76;              /* #C9A84C gold */
-    --plum: 61 26 62;                /* #3D1A3E plum */
-    --rose-gold: 183 110 121;        /* #B76E79 */
-    --header-bg: rgba(250, 247, 242, 0.90);
-    --header-border: 232 226 216;
-    --cream: 250 247 242;            /* #FAF7F2 */
-    --cream-dark: 237 229 216;       /* #EDE5D8 */
-    --charcoal: 44 44 44;            /* #2C2C2C */
-    --charcoal-light: 82 78 76;      /* #524E4C */
+    --card-foreground: 18 38 43;     /* #12262B */
+    --alternate: 244 242 238;        /* #F4F2EE subtle neutral alternate section */
+    --alternate-teal: 244 242 238;   /* #F4F2EE unified subtle neutral */
+    --border: 232 229 223;           /* #E8E5DF neutral light border */
+    --input: 232 229 223;            /* #E8E5DF */
+    --muted: 91 111 114;             /* #5B6F72 readable muted text (WCAG AA 5.2:1) */
+    --muted-bg: 244 242 238;         /* #F4F2EE */
+    --accent: 173 90 51;             /* #AD5A33 elegant copper (WCAG AA compliant) */
+    --accent-hover: 150 73 42;       /* #96492A deeper copper on hover */
+    --accent-foreground: 255 255 255;/* #FFFFFF crisp white text on copper */
+    --header-bg: rgba(251, 250, 247, 0.85);
+    --header-border: 232 229 223;    /* #E8E5DF */
+    --cream: 251 250 247;            /* #FBFAF7 */
+    --cream-dark: 244 242 238;       /* #F4F2EE */
+    --charcoal: 18 38 43;            /* #12262B */
+    --charcoal-light: 91 111 114;    /* #5B6F72 */
   }
 
   .dark {
-    --background: 18 15 20;          /* #120F14 deep luxury charcoal */
-    --foreground: 245 239 235;       /* #F5EFEB crisp warm text */
-    --card: 28 23 30;                /* #1C171E elevated dark card */
-    --card-foreground: 245 239 235;  /* #F5EFEB */
-    --border: 52 44 56;              /* #342C38 dark border */
-    --input: 52 44 56;               /* #342C38 */
-    --muted: 172 163 166;            /* #ACA3A6 readable muted text */
-    --muted-bg: 38 31 41;            /* #261F29 dark row/chip background */
-    --gold: 216 182 92;              /* #D8B65C bright luxury gold */
-    --plum: 82 38 84;                /* #522654 */
-    --rose-gold: 204 128 140;        /* #CC808C */
-    --header-bg: rgba(18, 15, 20, 0.92);
-    --header-border: 52 44 56;
-    --cream: 18 15 20;               /* in dark mode, cream becomes dark background */
-    --cream-dark: 38 31 41;          /* in dark mode, cream-dark becomes elevated dark background */
-    --charcoal: 245 239 235;         /* in dark mode, charcoal text becomes high-contrast white */
-    --charcoal-light: 206 198 200;   /* in dark mode, charcoal-light becomes light secondary text */
+    --background: 12 26 31;          /* #0C1A1F deep oceanic slate */
+    --foreground: 243 239 232;       /* #F3EFE8 warm linen text */
+    --card: 19 38 44;                /* #13262C elevated card */
+    --card-foreground: 243 239 232;  /* #F3EFE8 */
+    --alternate: 16 33 39;           /* #102127 slightly elevated alternate section */
+    --alternate-teal: 19 38 44;      /* #13262C */
+    --border: 35 57 63;              /* #23393F dark slate border */
+    --input: 35 57 63;               /* #23393F */
+    --muted: 157 176 176;            /* #9DB0B0 readable dark-mode muted text (6.5:1) */
+    --muted-bg: 19 38 44;            /* #13262C dark chip background */
+    --accent: 214 138 95;            /* #D68A5F luminous copper */
+    --accent-hover: 227 158 117;     /* #E39E75 brighter copper hover */
+    --accent-foreground: 12 26 31;   /* #0C1A1F high-contrast dark text on copper button */
+    --header-bg: rgba(12, 26, 31, 0.92);
+    --header-border: 35 57 63;
+    --cream: 12 26 31;               /* #0C1A1F */
+    --cream-dark: 19 38 44;          /* #13262C */
+    --charcoal: 243 239 232;         /* #F3EFE8 */
+    --charcoal-light: 157 176 176;   /* #9DB0B0 */
   }
 
   * {
@@ -74,32 +78,35 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  .btn-accent,
   .btn-gold {
-    @apply bg-gold text-white hover:brightness-110 active:brightness-95 transition-all duration-200 font-semibold;
+    @apply bg-accent text-[rgb(var(--accent-foreground))] hover:bg-accent-hover active:brightness-95 transition-all duration-200 font-semibold shadow-[0_4px_14px_rgba(173,90,51,0.28)] hover:shadow-[0_6px_20px_rgba(173,90,51,0.40)] dark:shadow-none;
   }
 
+  .btn-outline-accent,
   .btn-outline-gold {
-    @apply border-2 border-gold text-gold hover:bg-gold hover:text-white transition-all duration-200 font-semibold;
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-[rgb(var(--accent-foreground))] transition-all duration-200 font-semibold shadow-[0_2px_8px_rgba(173,90,51,0.10)] hover:shadow-[0_4px_14px_rgba(173,90,51,0.20)] dark:shadow-none;
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-serif text-charcoal;
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif text-foreground;
   }
 
   .card-salon {
-    @apply bg-card text-card-foreground rounded-2xl shadow-sm border border-border overflow-hidden transition-colors;
+    @apply bg-card text-card-foreground rounded-2xl shadow-[0_4px_20px_-2px_rgba(18,38,43,0.08)] hover:shadow-[0_8px_30px_-4px_rgba(18,38,43,0.14)] dark:shadow-none border border-border overflow-hidden transition-all duration-200;
   }
 
+  .gradient-copper,
   .gradient-gold {
-    background: linear-gradient(135deg, #C9A84C 0%, #D4B96A 50%, #A8853A 100%);
+    background: linear-gradient(135deg, rgb(var(--accent)) 0%, rgb(var(--accent-hover)) 100%);
   }
 
   .gradient-plum {
-    background: linear-gradient(135deg, #3D1A3E 0%, #5A2B5B 100%);
+    background: linear-gradient(135deg, rgb(var(--alternate)) 0%, rgb(var(--card)) 100%);
   }
 
   .shimmer-bg {
-    background: linear-gradient(90deg, rgb(var(--cream-dark)) 25%, rgb(var(--cream)) 50%, rgb(var(--cream-dark)) 75%);
+    background: linear-gradient(90deg, rgb(var(--alternate)) 25%, rgb(var(--card)) 50%, rgb(var(--alternate)) 75%);
     background-size: 200% 100%;
     animation: shimmer 2s linear infinite;
   }

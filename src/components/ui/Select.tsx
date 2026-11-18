@@ -16,7 +16,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full">
         {label && (
-          <label htmlFor={id} className="block text-sm font-medium text-charcoal mb-1">
+          <label htmlFor={id} className="block text-sm font-medium text-foreground mb-1">
             {label}
           </label>
         )}
@@ -26,7 +26,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             className={cn(
               'w-full px-4 py-2.5 pr-10 rounded-lg border bg-card text-foreground appearance-none',
-              'focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent',
+              'focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent',
               'transition-colors duration-150',
               error ? 'border-red-500' : 'border-border',
               className

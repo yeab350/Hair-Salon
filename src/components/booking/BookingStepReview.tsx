@@ -48,14 +48,14 @@ export default function BookingStepReview({ bookingState, onConfirm, onBack, upd
 
   return (
     <div>
-      <h2 className="text-2xl font-serif text-charcoal mb-2">{t('title')}</h2>
+      <h2 className="text-2xl font-serif text-foreground mb-2">{t('title')}</h2>
       <p className="text-muted text-sm mb-6">{t('subtitle')}</p>
 
       <div className="card-salon divide-y divide-border mb-6">
         {rows.map((row) => (
           <div key={row.label} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 p-4">
             <span className="text-muted text-sm w-28 flex-shrink-0">{row.label}</span>
-            <span className="text-charcoal font-medium">{row.value}</span>
+            <span className="text-foreground font-medium">{row.value}</span>
           </div>
         ))}
       </div>
@@ -63,13 +63,13 @@ export default function BookingStepReview({ bookingState, onConfirm, onBack, upd
       <p className="text-muted text-xs mb-6">{t('terms')}</p>
 
       <div className="flex gap-3">
-        <button onClick={onBack} className="flex items-center gap-2 px-6 py-4 btn-outline-gold rounded-full">
+        <button onClick={onBack} className="flex items-center gap-2 px-6 py-4 btn-outline-accent rounded-full font-semibold">
           <ChevronLeft className="h-4 w-4" /> {t('back')}
         </button>
         <button
           onClick={handleConfirm}
           disabled={submitting}
-          className="flex-1 px-6 py-4 btn-gold rounded-full disabled:opacity-70"
+          className="flex-1 px-6 py-4 btn-accent rounded-full font-semibold disabled:opacity-70 shadow-md hover:shadow-lg transition-all"
         >
           {submitting ? t('submitting') : t('confirm')}
         </button>

@@ -17,6 +17,9 @@ const config: Config = {
           DEFAULT: 'rgb(var(--card) / <alpha-value>)',
           foreground: 'rgb(var(--card-foreground) / <alpha-value>)',
         },
+        alternate: 'rgb(var(--alternate) / <alpha-value>)',
+        'alternate-teal': 'rgb(var(--alternate-teal) / <alpha-value>)',
+        sand: 'rgb(var(--alternate) / <alpha-value>)',
         cream: {
           DEFAULT: 'rgb(var(--cream) / <alpha-value>)',
           dark: 'rgb(var(--cream-dark) / <alpha-value>)',
@@ -31,22 +34,31 @@ const config: Config = {
         },
         border: 'rgb(var(--border) / <alpha-value>)',
         input: 'rgb(var(--input) / <alpha-value>)',
+        accent: {
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          hover: 'rgb(var(--accent-hover) / <alpha-value>)',
+          foreground: 'rgb(var(--accent-foreground) / <alpha-value>)',
+        },
+        copper: {
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          hover: 'rgb(var(--accent-hover) / <alpha-value>)',
+        },
         header: {
           bg: 'var(--header-bg)',
           border: 'rgb(var(--header-border) / <alpha-value>)',
         },
         gold: {
-          DEFAULT: 'rgb(var(--gold) / <alpha-value>)',
-          light: '#D4B96A',
-          dark: '#A8853A',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          light: 'rgb(var(--accent-hover) / <alpha-value>)',
+          dark: 'rgb(var(--accent-hover) / <alpha-value>)',
         },
         plum: {
-          DEFAULT: 'rgb(var(--plum) / <alpha-value>)',
-          light: '#5A2B5B',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          light: 'rgb(var(--accent-hover) / <alpha-value>)',
         },
         'rose-gold': {
-          DEFAULT: 'rgb(var(--rose-gold) / <alpha-value>)',
-          light: '#C98D96',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          light: 'rgb(var(--accent-hover) / <alpha-value>)',
         },
       },
       fontFamily: {

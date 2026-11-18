@@ -25,7 +25,7 @@ export default function BookingStepStylist({ bookingState, updateBooking, onNext
 
   return (
     <div>
-      <h2 className="text-2xl font-serif text-charcoal mb-2">{t('title')}</h2>
+      <h2 className="text-2xl font-serif text-foreground mb-2">{t('title')}</h2>
       <p className="text-muted text-sm mb-6">{t('subtitle')}</p>
 
       <div className="space-y-4 mb-8">
@@ -33,21 +33,21 @@ export default function BookingStepStylist({ bookingState, updateBooking, onNext
         <div
           className={cn(
             'flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-colors',
-            selectedStylistId === 'any' ? 'border-gold bg-gold/10' : 'border-border bg-card hover:border-gold/40'
+            selectedStylistId === 'any' ? 'border-accent bg-accent/10' : 'border-border bg-card hover:border-accent/40'
           )}
           onClick={() => updateBooking({ selectedStylistId: 'any' })}
         >
-          <div className="h-14 w-14 rounded-full bg-gradient-to-br from-gold/30 to-plum/30 flex items-center justify-center flex-shrink-0">
+          <div className="h-14 w-14 rounded-full bg-accent/15 text-accent border border-accent/30 flex items-center justify-center flex-shrink-0">
             <span className="text-2xl">✨</span>
           </div>
           <div className="flex-1">
-            <p className="font-medium text-charcoal">{t('any_available')}</p>
+            <p className="font-medium text-foreground">{t('any_available')}</p>
             <p className="text-muted text-sm">{t('any_desc')}</p>
           </div>
           <div className={cn('h-5 w-5 rounded-full border-2 flex items-center justify-center',
-            selectedStylistId === 'any' ? 'border-gold bg-gold' : 'border-muted'
+            selectedStylistId === 'any' ? 'border-accent bg-accent' : 'border-muted'
           )}>
-            {selectedStylistId === 'any' && <div className="h-2.5 w-2.5 rounded-full bg-white" />}
+            {selectedStylistId === 'any' && <div className="h-2.5 w-2.5 rounded-full bg-[rgb(var(--accent-foreground))]" />}
           </div>
         </div>
 
@@ -56,40 +56,40 @@ export default function BookingStepStylist({ bookingState, updateBooking, onNext
             key={stylist.id}
             className={cn(
               'flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-colors',
-              selectedStylistId === stylist.id ? 'border-gold bg-gold/10' : 'border-border bg-card hover:border-gold/40'
+              selectedStylistId === stylist.id ? 'border-accent bg-accent/10' : 'border-border bg-card hover:border-accent/40'
             )}
             onClick={() => updateBooking({ selectedStylistId: stylist.id })}
           >
-            <div className="h-14 w-14 rounded-full bg-gradient-to-br from-gold to-plum flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xl font-serif">{stylist.name.charAt(0)}</span>
+            <div className="h-14 w-14 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center flex-shrink-0 text-accent font-serif text-xl font-bold">
+              {stylist.name.charAt(0)}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-medium text-charcoal">
+              <p className="font-medium text-foreground">
                 {locale === 'am' ? stylist.nameAm : stylist.name}
               </p>
-              <p className="text-gold text-xs">{locale === 'am' ? stylist.roleAm : stylist.role}</p>
+              <p className="text-foreground/75 text-xs font-medium">{locale === 'am' ? stylist.roleAm : stylist.role}</p>
               <div className="flex items-center gap-1 mt-1">
-                <Star className="h-3 w-3 text-gold fill-gold" />
+                <Star className="h-3 w-3 text-amber-500 fill-amber-500" />
                 <span className="text-xs text-muted">{stylist.rating} · {t('experience', { years: stylist.yearsExperience })}</span>
               </div>
             </div>
             <div className={cn('h-5 w-5 rounded-full border-2 flex items-center justify-center flex-shrink-0',
-              selectedStylistId === stylist.id ? 'border-gold bg-gold' : 'border-muted'
+              selectedStylistId === stylist.id ? 'border-accent bg-accent' : 'border-muted'
             )}>
-              {selectedStylistId === stylist.id && <div className="h-2.5 w-2.5 rounded-full bg-white" />}
+              {selectedStylistId === stylist.id && <div className="h-2.5 w-2.5 rounded-full bg-[rgb(var(--accent-foreground))]" />}
             </div>
           </div>
         ))}
       </div>
 
       <div className="flex gap-3">
-        <button onClick={onBack} className="flex items-center gap-2 px-6 py-4 btn-outline-gold rounded-full">
+        <button onClick={onBack} className="flex items-center gap-2 px-6 py-4 btn-outline-accent rounded-full font-semibold">
           <ChevronLeft className="h-4 w-4" /> {t('back')}
         </button>
         <button
           onClick={onNext}
           disabled={!selectedStylistId}
-          className="flex-1 px-6 py-4 btn-gold rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 px-6 py-4 btn-accent rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {t('continue')}
         </button>

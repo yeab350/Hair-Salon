@@ -114,9 +114,9 @@ export default function BookingStepper() {
                     className={cn(
                       'flex items-center justify-center h-10 w-10 rounded-full border-2 text-sm font-semibold transition-all duration-300',
                       isCompleted
-                        ? 'bg-gold border-gold text-white shadow-sm'
+                        ? 'bg-accent border-accent text-[rgb(var(--accent-foreground))] shadow-sm'
                         : isCurrent
-                        ? 'bg-plum border-plum text-white shadow-md scale-110'
+                        ? 'bg-accent border-accent text-[rgb(var(--accent-foreground))] shadow-md scale-110'
                         : 'bg-card border-border text-muted'
                     )}
                   >
@@ -125,7 +125,7 @@ export default function BookingStepper() {
                   <span
                     className={cn(
                       'text-xs mt-2 font-medium transition-colors hidden sm:block',
-                      isCurrent ? 'text-gold font-bold' : isCompleted ? 'text-charcoal' : 'text-muted'
+                      isCurrent ? 'text-accent font-bold' : isCompleted ? 'text-foreground' : 'text-muted'
                     )}
                   >
                     {t(`steps.${stepObj.id}`)}
@@ -135,7 +135,7 @@ export default function BookingStepper() {
                   <div
                     className={cn(
                       'h-0.5 flex-1 mx-2 transition-colors duration-300',
-                      idx < stepIndex ? 'bg-gold' : 'bg-border'
+                      idx < stepIndex ? 'bg-accent' : 'bg-border'
                     )}
                   />
                 )}

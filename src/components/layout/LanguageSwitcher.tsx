@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border hover:border-gold text-sm font-medium text-charcoal hover:text-gold transition-colors"
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border hover:border-accent text-sm font-medium text-foreground hover:text-accent transition-colors"
       aria-label="Switch language"
     >
       <Languages className="h-4 w-4" />

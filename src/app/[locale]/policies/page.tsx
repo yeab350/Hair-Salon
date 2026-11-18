@@ -21,7 +21,7 @@ export default function PoliciesPage() {
       <main className="min-h-screen bg-background pt-28 pb-20 transition-colors duration-200">
         <div className="container-salon max-w-3xl">
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-semibold mb-4">
               <Shield className="h-3.5 w-3.5" />
               PEACE OF MIND
             </div>
@@ -31,14 +31,14 @@ export default function PoliciesPage() {
 
           <div className="space-y-6">
             {sections.map(({ title, body, icon: Icon }) => (
-              <div key={title} className="card-salon p-6 md:p-8 border border-border">
+              <div key={title} className="card-salon p-6 md:p-8 border border-border bg-card">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="h-10 w-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-5 w-5" />
+                  <div className="h-10 w-10 rounded-xl bg-foreground/5 text-foreground flex items-center justify-center flex-shrink-0 border border-border">
+                    <Icon className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-xl font-serif text-charcoal">{title}</h2>
+                  <h2 className="text-xl font-serif text-foreground font-semibold">{title}</h2>
                 </div>
-                <p className="text-charcoal-light leading-relaxed text-sm pl-13">
+                <p className="text-foreground/90 leading-relaxed text-sm pl-13">
                   {body}
                 </p>
               </div>

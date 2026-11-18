@@ -18,7 +18,7 @@ export default function FAQPage() {
       <main className="min-h-screen bg-background pt-28 pb-20 transition-colors duration-200">
         <div className="container-salon max-w-3xl">
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-semibold mb-4">
               <HelpCircle className="h-3.5 w-3.5" />
               HELP CENTER
             </div>
@@ -30,15 +30,15 @@ export default function FAQPage() {
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="card-salon p-6 group transition-all duration-200 open:shadow-md cursor-pointer border border-border"
+                className="card-salon p-6 group transition-all duration-200 open:shadow-md cursor-pointer border border-border bg-card"
               >
-                <summary className="font-serif text-lg text-charcoal cursor-pointer list-none flex justify-between items-center gap-4">
+                <summary className="font-serif text-lg text-foreground cursor-pointer list-none flex justify-between items-center gap-4">
                   <span>{faq.q}</span>
-                  <div className="h-8 w-8 rounded-full bg-muted-bg flex items-center justify-center flex-shrink-0 group-open:rotate-180 transition-transform duration-200">
-                    <ChevronDown className="h-4 w-4 text-gold" />
+                  <div className="h-8 w-8 rounded-full bg-alternate flex items-center justify-center flex-shrink-0 group-open:rotate-180 transition-transform duration-200">
+                    <ChevronDown className="h-4 w-4 text-foreground" />
                   </div>
                 </summary>
-                <p className="text-charcoal-light mt-4 pt-4 border-t border-border leading-relaxed text-sm">
+                <p className="text-foreground/90 mt-4 pt-4 border-t border-border leading-relaxed text-sm">
                   {faq.a}
                 </p>
               </details>

@@ -7,42 +7,46 @@ export default function HomeCTA() {
   const t = useTranslations('home.cta')
 
   return (
-    <section className="py-24 gradient-plum text-white relative overflow-hidden">
+    <section className="py-24 bg-alternate text-foreground border-y border-border dark:bg-card dark:text-foreground relative overflow-hidden transition-colors duration-200">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       {/* Decorative accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-gold/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-salon text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-gold text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm">
-          <Sparkles className="h-3.5 w-3.5" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-foreground/5 border border-border text-foreground text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm">
+          <Sparkles className="h-3.5 w-3.5 text-accent" />
           <span>LUXURY HAIR CARE</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 max-w-3xl mx-auto leading-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 max-w-3xl mx-auto leading-tight text-foreground font-semibold">
           {t('title')}
         </h2>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        <p className="text-foreground/80 dark:text-muted text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
           {t('subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <IntlLink
             href="/booking"
-            className="w-full sm:w-auto inline-flex items-center gap-2.5 justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white rounded-full text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-gold/30 hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center gap-2.5 justify-center px-8 py-4 btn-accent rounded-full text-lg font-semibold transition-all duration-300 shadow-xl hover:scale-105"
           >
             <Calendar className="h-5 w-5" />
             {t('book_now')}
           </IntlLink>
-          <span className="text-white/50 text-sm font-medium">{t('or')}</span>
+          <span className="text-muted text-sm font-medium">{t('or')}</span>
           <a
             href={`tel:${salonConfig.contact.phone}`}
-            className="w-full sm:w-auto inline-flex items-center gap-2 justify-center px-8 py-4 border border-white/30 hover:border-white text-white rounded-full text-lg font-semibold transition-all duration-300 hover:bg-white/10"
+            className="w-full sm:w-auto inline-flex items-center gap-2 justify-center px-8 py-4 border border-border hover:border-accent text-foreground rounded-full text-lg font-semibold transition-all duration-300 bg-card/60 hover:bg-card shadow-sm"
           >
-            <Phone className="h-5 w-5" />
+            <Phone className="h-5 w-5 text-foreground" />
             {t('call_us')}
           </a>
         </div>
       </div>
+
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   )
 }

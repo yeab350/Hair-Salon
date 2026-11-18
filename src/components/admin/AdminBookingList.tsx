@@ -7,7 +7,7 @@ const statusVariant = {
   pending: 'warning',
   confirmed: 'success',
   cancelled: 'error',
-  completed: 'gold',
+  completed: 'accent',
   'no-show': 'muted',
 } as const
 
@@ -17,7 +17,7 @@ export default function AdminBookingList() {
   return (
     <div className="card-salon">
       <div className="p-6 pb-0">
-        <h2 className="font-serif text-xl text-charcoal">{t('bookings_title')}</h2>
+        <h2 className="font-serif text-xl text-foreground">{t('bookings_title')}</h2>
       </div>
       <div className="p-6">
         <div className="overflow-x-auto">
@@ -35,13 +35,13 @@ export default function AdminBookingList() {
                 return (
                   <tr key={booking.id} className="hover:bg-muted-bg/50 transition-colors">
                     <td className="py-3 pr-4">
-                      <p className="font-medium text-charcoal">{booking.clientName}</p>
+                      <p className="font-medium text-foreground">{booking.clientName}</p>
                       <p className="text-muted text-xs">{booking.clientPhone}</p>
                     </td>
-                    <td className="py-3 pr-4 text-charcoal">{stylist?.name ?? '—'}</td>
-                    <td className="py-3 pr-4 text-charcoal">{booking.date}</td>
-                    <td className="py-3 pr-4 text-charcoal">{booking.startTime}</td>
-                    <td className="py-3 pr-4 font-medium text-gold">{booking.totalPrice.toLocaleString()} ETB</td>
+                    <td className="py-3 pr-4 text-foreground">{stylist?.name ?? '—'}</td>
+                    <td className="py-3 pr-4 text-foreground">{booking.date}</td>
+                    <td className="py-3 pr-4 text-foreground">{booking.startTime}</td>
+                    <td className="py-3 pr-4 font-medium text-accent">{booking.totalPrice.toLocaleString()} ETB</td>
                     <td className="py-3">
                       <Badge variant={statusVariant[booking.status]}>
                         {t(`booking_status_${booking.status.replace('-', '_')}` as any)}

@@ -24,7 +24,9 @@ export default function GalleryGrid() {
           onClick={() => setActiveCategory('all')}
           className={cn(
             'px-4 py-2 rounded-full text-sm font-medium transition-colors',
-            activeCategory === 'all' ? 'bg-gold text-white' : 'bg-card border border-border text-charcoal hover:border-gold hover:text-gold'
+            activeCategory === 'all'
+              ? 'bg-accent text-[rgb(var(--accent-foreground))] shadow-sm'
+              : 'bg-card border border-border text-foreground hover:border-accent hover:text-accent'
           )}
         >
           {t('all')}
@@ -35,7 +37,9 @@ export default function GalleryGrid() {
             onClick={() => setActiveCategory(cat.id)}
             className={cn(
               'px-4 py-2 rounded-full text-sm font-medium transition-colors',
-              activeCategory === cat.id ? 'bg-gold text-white' : 'bg-card border border-border text-charcoal hover:border-gold hover:text-gold'
+              activeCategory === cat.id
+                ? 'bg-accent text-[rgb(var(--accent-foreground))] shadow-sm'
+                : 'bg-card border border-border text-foreground hover:border-accent hover:text-accent'
             )}
           >
             {locale === 'am' ? cat.labelAm : cat.label}
@@ -48,7 +52,7 @@ export default function GalleryGrid() {
         {filtered.map((item, idx) => (
           <div
             key={item.id}
-            className="relative aspect-square rounded-xl overflow-hidden bg-cream-dark cursor-pointer group shadow-sm hover:shadow-md transition-shadow"
+            className="relative aspect-square rounded-xl overflow-hidden bg-alternate border border-border cursor-pointer group shadow-sm hover:shadow-md transition-shadow"
             onClick={() => setLightboxIndex(idx)}
           >
             <img
@@ -57,7 +61,7 @@ export default function GalleryGrid() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-white text-xs font-medium bg-black/60 backdrop-blur-sm rounded-lg px-2.5 py-1.5 w-full truncate">
                 {locale === 'am' ? item.altAm : item.alt}

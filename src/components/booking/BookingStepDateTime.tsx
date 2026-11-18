@@ -53,7 +53,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
     <div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-2xl font-serif text-charcoal mb-1">{t('title')}</h2>
+          <h2 className="text-2xl font-serif text-foreground mb-1">{t('title')}</h2>
           <p className="text-muted text-sm">{t('subtitle')}</p>
         </div>
 
@@ -66,8 +66,8 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
             className={cn(
               'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors',
               useEthiopianCalendar
-                ? 'bg-gold text-white border-gold'
-                : 'bg-card border-border text-charcoal hover:border-gold'
+                ? 'bg-accent text-[rgb(var(--accent-foreground))] border-accent'
+                : 'bg-card border-border text-foreground hover:border-accent'
             )}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -83,7 +83,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
               onClick={() => setTimeFormat('12h')}
               className={cn(
                 'px-2.5 py-1 rounded-full transition-colors',
-                timeFormat === '12h' ? 'bg-gold text-white' : 'text-muted hover:text-charcoal'
+                timeFormat === '12h' ? 'bg-accent text-[rgb(var(--accent-foreground))]' : 'text-muted hover:text-foreground'
               )}
             >
               12h
@@ -93,7 +93,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
               onClick={() => setTimeFormat('24h')}
               className={cn(
                 'px-2.5 py-1 rounded-full transition-colors',
-                timeFormat === '24h' ? 'bg-gold text-white' : 'text-muted hover:text-charcoal'
+                timeFormat === '24h' ? 'bg-accent text-[rgb(var(--accent-foreground))]' : 'text-muted hover:text-foreground'
               )}
             >
               24h
@@ -103,9 +103,9 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
       </div>
 
       {/* Timezone Note */}
-      <div className="mb-6 flex items-center justify-between bg-muted-bg/60 border border-border/50 rounded-xl px-4 py-2 text-xs text-muted">
+      <div className="mb-6 flex items-center justify-between bg-alternate border border-border rounded-xl px-4 py-2 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <Clock className="h-3.5 w-3.5 text-gold" />
+          <Clock className="h-3.5 w-3.5 text-foreground" />
           Timezone: <strong>Africa/Addis_Ababa (GMT+3)</strong>
         </span>
         <span>
@@ -115,8 +115,8 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
 
       {/* Date picker horizontal scroll */}
       <div className="mb-8">
-        <p className="font-medium text-charcoal mb-3 flex items-center gap-2 text-sm">
-          <CalendarIcon className="h-4 w-4 text-gold" /> {t('pick_date')}
+        <p className="font-medium text-foreground mb-3 flex items-center gap-2 text-sm">
+          <CalendarIcon className="h-4 w-4 text-foreground" /> {t('pick_date')}
         </p>
         <div className="flex gap-2.5 overflow-x-auto pb-3 pt-1 scrollbar-hide">
           {days.map((day) => {
@@ -133,8 +133,8 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
                 className={cn(
                   'flex flex-col items-center px-4 py-3 rounded-2xl border-2 flex-shrink-0 min-w-[76px] transition-all duration-200',
                   isSelected
-                    ? 'border-gold bg-gold text-white shadow-md -translate-y-0.5'
-                    : 'border-border bg-card text-charcoal hover:border-gold/50 shadow-sm',
+                    ? 'border-accent bg-accent text-[rgb(var(--accent-foreground))] shadow-md -translate-y-0.5'
+                    : 'border-border bg-card text-foreground hover:border-accent/50 shadow-sm',
                   isPast && 'opacity-40 cursor-not-allowed'
                 )}
               >
@@ -165,9 +165,9 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
       {selectedDate ? (
         <div className="mt-4">
           <div className="flex items-center justify-between mb-4">
-            <p className="font-medium text-charcoal text-sm">
+            <p className="font-medium text-foreground text-sm">
               {locale === 'am' ? 'የተመረጠ ቀን፡' : 'Selected Date:'}{' '}
-              <span className="text-gold font-bold">
+              <span className="text-accent font-bold">
                 {useEthiopianCalendar
                   ? toEthiopianDateString(selectedDate, locale)
                   : format(selectedDate, 'EEEE, MMMM d, yyyy')}
@@ -186,11 +186,11 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
           />
 
           {availableSlots.length === 0 && nextAvailable && (
-            <div className="mt-6 p-4 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-between">
+            <div className="mt-6 p-4 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Sparkles className="h-5 w-5 text-gold" />
+                <Sparkles className="h-5 w-5 text-accent" />
                 <div className="text-xs">
-                  <p className="font-bold text-charcoal">
+                  <p className="font-bold text-foreground">
                     {locale === 'am' ? 'ቀጣዩ ክፍት ሰዓት ይገኛል፡' : 'Next Available Slot:'}
                   </p>
                   <p className="text-muted">
@@ -206,7 +206,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
                     selectedTime: nextAvailable.slot.time,
                   })
                 }}
-                className="px-4 py-2 btn-gold rounded-full text-xs font-semibold"
+                className="px-4 py-2 btn-accent rounded-full text-xs font-semibold"
               >
                 {locale === 'am' ? 'ይህን ምረጥ' : 'Select This Slot'}
               </button>
@@ -215,7 +215,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
         </div>
       ) : (
         <div className="text-center py-12 card-salon p-8 text-muted">
-          <CalendarIcon className="h-10 w-10 text-gold/60 mx-auto mb-3" />
+          <CalendarIcon className="h-10 w-10 text-accent/60 mx-auto mb-3" />
           <p className="text-sm font-medium">{locale === 'am' ? 'እባክዎ መጀመሪያ ቀን ይምረጡ' : 'Please select a date above to view available time slots'}</p>
         </div>
       )}
@@ -225,7 +225,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
         <button
           type="button"
           onClick={onBack}
-          className="flex items-center gap-2 px-6 py-4 btn-outline-gold rounded-full text-sm font-semibold"
+          className="flex items-center gap-2 px-6 py-4 btn-outline-accent rounded-full text-sm font-semibold"
         >
           <ChevronLeft className="h-4 w-4" /> {t('back')}
         </button>
@@ -233,7 +233,7 @@ export default function BookingStepDateTime({ bookingState, updateBooking, onNex
           type="button"
           onClick={onNext}
           disabled={!selectedDate || !selectedTime}
-          className="flex-1 px-6 py-4 btn-gold rounded-full text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transition-all"
+          className="flex-1 px-6 py-4 btn-accent rounded-full text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transition-all"
         >
           {t('continue')}
         </button>

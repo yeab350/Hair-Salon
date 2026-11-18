@@ -33,7 +33,7 @@ export default function TimeSlotPicker({
   if (slots.length === 0) {
     return (
       <div className="card-salon py-10 px-6 text-center text-muted">
-        <p className="text-base font-serif text-charcoal mb-1">
+        <p className="text-base font-serif text-foreground mb-1">
           {locale === 'am' ? 'በዚህ ቀን ክፍት ሰዓት የለም' : 'No available slots on this date'}
         </p>
         <p className="text-xs">{t('no_slots')}</p>
@@ -74,8 +74,8 @@ export default function TimeSlotPicker({
                 className={cn(
                   'px-3 py-2.5 rounded-xl border-2 text-xs font-semibold transition-all duration-150 text-center',
                   isSelected
-                    ? 'border-gold bg-gold text-white shadow-sm scale-105'
-                    : 'border-border bg-card text-charcoal hover:border-gold/60 hover:bg-gold/10'
+                    ? 'border-accent bg-accent text-[rgb(var(--accent-foreground))] shadow-sm scale-105'
+                    : 'border-border bg-card text-foreground hover:border-accent/60 hover:bg-accent/10'
                 )}
               >
                 {displayLabel}
@@ -89,7 +89,7 @@ export default function TimeSlotPicker({
 
   return (
     <div className="card-salon p-5 md:p-6 bg-card border border-border">
-      <p className="font-serif text-lg text-charcoal mb-4">
+      <p className="font-serif text-lg text-foreground mb-4">
         {locale === 'am' ? 'የቀጠሮ ሰዓት ይምረጡ' : t('pick_time')}
       </p>
 

@@ -26,8 +26,8 @@ export default function ServiceFilters({ onCategoryChange }: ServiceFiltersProps
         className={cn(
           'px-4 py-2 rounded-full text-sm font-medium transition-colors',
           active === 'all'
-            ? 'bg-gold text-white'
-            : 'bg-card border border-border text-charcoal hover:border-gold hover:text-gold'
+            ? 'bg-accent text-[rgb(var(--accent-foreground))] shadow-sm'
+            : 'bg-card border border-border text-foreground hover:border-accent hover:text-accent'
         )}
       >
         {t('all_categories')}
@@ -39,8 +39,8 @@ export default function ServiceFilters({ onCategoryChange }: ServiceFiltersProps
           className={cn(
             'px-4 py-2 rounded-full text-sm font-medium transition-colors',
             active === cat.id
-              ? 'bg-gold text-white'
-              : 'bg-card border border-border text-charcoal hover:border-gold hover:text-gold'
+              ? 'bg-accent text-[rgb(var(--accent-foreground))] shadow-sm'
+              : 'bg-card border border-border text-foreground hover:border-accent hover:text-accent'
           )}
         >
           {locale === 'am' ? cat.label.am : cat.label.en}
